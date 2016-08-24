@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/postgres</property>
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.connection.password">postgres</property>
+		
+		
+		<property name="hibernate.jdbc.use_get_generated_keys">true</property>
+		
+<property name="hibernate.cache.region.factory_class">
+         org.hibernate.cache.SingletonEhCacheRegionFactory</property>
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.use_query_cache">true</property>
+		
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.format_sql">false</property>
+		
+		<property name="hibernate.generate_statistics">false</property>
+		<property name="hibernate.max_fetch_depth">2</property>
+		<property name="hibernate.default_batch_fetch_size">20</property>
+		<property name="hibernate.jdbc.fetch_size">1000</property>
+		<property name="hibernate.jdbc.batch_size">50</property>
+		<property name="hibernate.query.startup_check">true</property>
+		<property name="hibernate.order_inserts">true</property>
+		<property name="hibernate.order_updates">true</property>
+		<property name="hibernate.jdbc.batch_versioned_data">true</property>
+		<property name="hibernate.bytecode.use_reflection_optimizer">true</property>
+		<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+		<property name="hibernate.query.substitutions">true 1, false 0</property>
+		
+		<property name="hbm2ddl.auto">update</property>
+
+		<mapping  class="pl.altkom.model.Teacher" />
+		<mapping  class="pl.altkom.model.Classes" />
+		<mapping  class="pl.altkom.model.Subject" />
+		<mapping  class="pl.altkom.model.Student" />
+		<mapping  class="pl.altkom.model.Mark" />
+
+	</session-factory>
+</hibernate-configuration>
